@@ -179,62 +179,136 @@
             z-index: 5;
         }
 
-        /* 좌측 전자책 출발 파티클 경로들 */
+        /* 모바일 환경 (세로 방향 폭포수 흐름 설정) */
         .p-left-1 {
-            --tw-translate-x: 230px;
-            --tw-translate-y: 20px;
+            top: 100%;
+            left: 50%;
+            --tw-translate-x: 20px;
+            --tw-translate-y: 80px;
             animation: particle-flow 2.8s linear infinite;
             animation-delay: 0s;
         }
 
         .p-left-2 {
-            --tw-translate-x: 230px;
-            --tw-translate-y: -40px;
+            top: 95%;
+            left: 40%;
+            --tw-translate-x: -30px;
+            --tw-translate-y: 100px;
             animation: particle-flow 3.2s linear infinite;
             animation-delay: 0.7s;
         }
 
         .p-left-3 {
-            --tw-translate-x: 230px;
-            --tw-translate-y: 60px;
+            top: 98%;
+            left: 60%;
+            --tw-translate-x: 40px;
+            --tw-translate-y: 70px;
             animation: particle-flow 2.5s linear infinite;
             animation-delay: 1.4s;
         }
 
         .p-left-4 {
-            --tw-translate-x: 230px;
-            --tw-translate-y: -10px;
+            top: 90%;
+            left: 50%;
+            --tw-translate-x: -10px;
+            --tw-translate-y: 90px;
             animation: particle-flow 3s linear infinite;
             animation-delay: 2.1s;
         }
 
-        /* 중앙 부가서비스 출발 파티클 경로들 */
         .p-mid-1 {
-            --tw-translate-x: 180px;
-            --tw-translate-y: 30px;
+            top: 100%;
+            left: 50%;
+            --tw-translate-x: 30px;
+            --tw-translate-y: 70px;
             animation: particle-flow 2.2s linear infinite;
             animation-delay: 0.3s;
         }
 
         .p-mid-2 {
-            --tw-translate-x: 180px;
-            --tw-translate-y: -30px;
+            top: 95%;
+            left: 40%;
+            --tw-translate-x: -20px;
+            --tw-translate-y: 90px;
             animation: particle-flow 2.6s linear infinite;
             animation-delay: 1.1s;
         }
 
         .p-mid-3 {
-            --tw-translate-x: 180px;
-            --tw-translate-y: 50px;
+            top: 98%;
+            left: 60%;
+            --tw-translate-x: 40px;
+            --tw-translate-y: 60px;
             animation: particle-flow 2.4s linear infinite;
             animation-delay: 1.8s;
         }
 
         .p-mid-4 {
-            --tw-translate-x: 180px;
-            --tw-translate-y: -10px;
+            top: 90%;
+            left: 50%;
+            --tw-translate-x: -10px;
+            --tw-translate-y: 80px;
             animation: particle-flow 2s linear infinite;
             animation-delay: 2.5s;
+        }
+
+        /* PC 환경 (md 이상, 가로 방향 흐름 설정) */
+        @media (min-width: 768px) {
+            .p-left-1 {
+                top: 50%;
+                left: 100%;
+                --tw-translate-x: 230px;
+                --tw-translate-y: 20px;
+            }
+
+            .p-left-2 {
+                top: 33%;
+                left: 100%;
+                --tw-translate-x: 230px;
+                --tw-translate-y: -40px;
+            }
+
+            .p-left-3 {
+                top: 66%;
+                left: 100%;
+                --tw-translate-x: 230px;
+                --tw-translate-y: 60px;
+            }
+
+            .p-left-4 {
+                top: 45%;
+                left: 100%;
+                --tw-translate-x: 230px;
+                --tw-translate-y: -10px;
+            }
+
+            .p-mid-1 {
+                top: 50%;
+                left: 100%;
+                --tw-translate-x: 180px;
+                --tw-translate-y: 30px;
+            }
+
+            .p-mid-2 {
+                top: 25%;
+                left: 100%;
+                --tw-translate-x: 180px;
+                --tw-translate-y: -30px;
+            }
+
+            .p-mid-3 {
+                top: 75%;
+                left: 100%;
+                --tw-translate-x: 180px;
+                --tw-translate-y: 50px;
+            }
+
+            .p-mid-4 {
+                top: 40%;
+                left: 100%;
+                --tw-translate-x: 180px;
+                --tw-translate-y: -10px;
+            }
         }
 
         /* 자동 재생용 프로그레스 바 애니메이션 - 시간을 5초로 수정 */
@@ -311,7 +385,8 @@
                 <p class="text-lg md:text-xl text-slate-600 leading-[2.2] max-w-3xl">
                     단순한 전자책을 넘어, 교수님의 저작물이 학생들에게<br />
                     가장 완벽한 <strong class="text-slate-800 font-semibold">'학습 경험 파트너'</strong>로 재탄생합니다.<br />
-                    <span class="inline-block whitespace-nowrap mt-3">본 문서는 교수님의 소중한 저서가 어떻게 서비스되는지 안내해 드리는
+                    <!-- 모바일 최적화를 위해 inline-block을 block으로 변경하여 자동 줄바꿈 허용 -->
+                    <span class="block mt-3 w-full whitespace-normal">본 문서는 교수님의 소중한 저서가 어떻게 서비스되는지 안내해 드리는
                         개요서입니다.</span>
                 </p>
             </div>
@@ -368,10 +443,10 @@
             <div
                 class="relative w-full max-w-6xl h-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 lg:gap-12">
                 <div class="relative flex flex-col items-center gap-6 group">
-                    <div class="particle p-left-1 top-1/2 left-full"></div>
-                    <div class="particle p-left-2 top-1/3 left-full"></div>
-                    <div class="particle p-left-3 top-2/3 left-full"></div>
-                    <div class="particle p-left-4 top-[45%] left-full"></div>
+                    <div class="particle p-left-1"></div>
+                    <div class="particle p-left-2"></div>
+                    <div class="particle p-left-3"></div>
+                    <div class="particle p-left-4"></div>
                     <div
                         class="relative w-36 h-48 bg-slate-100 rounded-xl shadow-[10px_20px_40px_rgba(0,0,0,0.1)] border border-white flex flex-col overflow-hidden transform group-hover:rotate-2 transition-transform">
                         <div class="absolute inset-0 border-[6px] border-slate-800 rounded-xl z-10"></div>
@@ -402,10 +477,10 @@
                 </div>
 
                 <div class="relative flex flex-col items-center gap-6">
-                    <div class="particle p-mid-1 top-1/2 left-full"></div>
-                    <div class="particle p-mid-2 top-1/4 left-full"></div>
-                    <div class="particle p-mid-3 top-3/4 left-full"></div>
-                    <div class="particle p-mid-4 top-[40%] left-full"></div>
+                    <div class="particle p-mid-1"></div>
+                    <div class="particle p-mid-2"></div>
+                    <div class="particle p-mid-3"></div>
+                    <div class="particle p-mid-4"></div>
                     <div class="relative w-48 h-48 flex items-center justify-center">
                         <div class="absolute w-36 h-36 bg-blue-100/40 rounded-full blur-3xl"></div>
                         <div
@@ -494,7 +569,7 @@
                         <h3 class="text-3xl md:text-4xl font-bold mb-4 leading-tight tracking-tight text-slate-900">
                             학습 효율을 극대화하는 5대 부가서비스
                         </h3>
-                        <p class="text-slate-600 text-base">기능을 선택하거나 가만히 기다리면 자동으로 화면이 전환됩니다.</p>
+                        <p class="text-slate-600 text-base">기문을 선택하거나 가만히 기다리면 자동으로 화면이 전환됩니다.</p>
                     </div>
 
                     <!-- 상단 가로 탭 (최적화 레이아웃) -->
