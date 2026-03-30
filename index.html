@@ -118,6 +118,87 @@
             animation: float 3.5s ease-in-out infinite;
         }
 
+        /* 프로필 이미지 비동기 부유 애니메이션 (회전각 및 Y축 정렬 유지) */
+        @keyframes float-p1 {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-6deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-6deg);
+            }
+        }
+
+        @keyframes float-p2 {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(3deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(3deg);
+            }
+        }
+
+        @keyframes float-p3 {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(0deg);
+            }
+        }
+
+        @keyframes float-p4 {
+
+            0%,
+            100% {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(calc(-50% - 12px)) rotate(0deg);
+            }
+        }
+
+        @keyframes float-p5 {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-3deg);
+            }
+        }
+
+        .animate-float-p1 {
+            animation: float-p1 4.5s ease-in-out infinite;
+        }
+
+        .animate-float-p2 {
+            animation: float-p2 5.5s ease-in-out infinite 0.5s;
+        }
+
+        .animate-float-p3 {
+            animation: float-p3 4s ease-in-out infinite 1.2s;
+        }
+
+        .animate-float-p4 {
+            animation: float-p4 6s ease-in-out infinite 0.2s;
+        }
+
+        .animate-float-p5 {
+            animation: float-p5 5s ease-in-out infinite 1.5s;
+        }
+
         /* LED 박동 글로우 효과 */
         @keyframes led-pulse {
 
@@ -364,15 +445,15 @@
             </div>
 
             <img src="여자1.png" alt="한국인 프로필"
-                class="absolute top-10 right-[35%] md:right-[40%] w-12 h-12 md:w-14 md:h-14 rounded-full border-4 border-white shadow-lg object-cover transform -rotate-6" />
+                class="animate-float-p1 absolute top-10 right-[35%] md:right-[40%] w-12 h-12 md:w-14 md:h-14 rounded-full border-4 border-white shadow-lg object-cover transform -rotate-6" />
             <img src="남자1.png" alt="한국인 프로필"
-                class="absolute bottom-16 right-[45%] md:right-[50%] w-14 h-14 md:w-16 md:h-16 rounded-full border-[4px] border-white shadow-md object-cover transform rotate-3" />
+                class="animate-float-p2 absolute bottom-16 right-[45%] md:right-[50%] w-14 h-14 md:w-16 md:h-16 rounded-full border-[4px] border-white shadow-md object-cover transform rotate-3" />
             <img src="여자2.png" alt="한국인 프로필"
-                class="absolute top-16 right-8 md:right-20 w-12 h-12 md:w-16 md:h-16 rounded-full border-4 border-white shadow-md object-cover" />
+                class="animate-float-p3 absolute top-16 right-8 md:right-20 w-12 h-12 md:w-16 md:h-16 rounded-full border-4 border-white shadow-md object-cover" />
             <img src="남자2.png" alt="한국인 프로필"
-                class="absolute top-1/2 -translate-y-1/2 right-[5%] md:right-[10%] w-16 h-16 md:w-20 md:h-20 rounded-full border-[5px] border-white shadow-xl object-cover" />
+                class="animate-float-p4 absolute top-1/2 -translate-y-1/2 right-[5%] md:right-[10%] w-16 h-16 md:w-20 md:h-20 rounded-full border-[5px] border-white shadow-xl object-cover" />
             <img src="남자3.png" alt="한국인 프로필"
-                class="absolute bottom-12 right-12 md:right-24 w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-white shadow-lg object-cover transform -rotate-3" />
+                class="animate-float-p5 absolute bottom-12 right-12 md:right-24 w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-white shadow-lg object-cover transform -rotate-3" />
 
             <div class="relative z-10 w-full md:w-[85%] lg:w-[80%] px-8 py-20 md:px-16 lg:px-24 md:py-32">
                 <h1
